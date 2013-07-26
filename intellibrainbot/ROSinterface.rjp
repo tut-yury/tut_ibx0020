@@ -1,0 +1,7 @@
+Cookie=hbp
+Version=1
+MainClass=ROSinterface
+StackSize=200
+Autorun=false
+BuildBeforeLoad=true
+OpenFile=ROSinterface.java

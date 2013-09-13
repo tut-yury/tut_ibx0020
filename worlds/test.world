@@ -67,7 +67,7 @@ interval_sim 100  # simulation timestep in milliseconds
 window
 ( 
   size [ 480.000 480.000 ] 
-  rotate [ 0.000 90 ]
+  rotate [ 0.000 0 ]
   center [ 0 8 ]
   scale 20 
 )
@@ -83,11 +83,9 @@ floorplan
 
 # throw in a robot
 erratic( 
-#pose [ -11.277 23.266 0 180.000 ] 
-pose [ 0 0 0 90 ]
+pose [ 0 0 0 0 ]
 name "era" color "blue")
 
 block( 
-#pose [ -13.924 25.020 0 180.000 ] 
-pose [ 1 1 0 180.000 ] 
+pose [ 4 1 0 180.000 ] 
 color "red")

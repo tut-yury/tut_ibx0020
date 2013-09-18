@@ -51,7 +51,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs roscpp rospy)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES tut_ibx0020
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy
+  CATKIN_DEPENDS geometry_msgs roscpp rospy
 #  DEPENDS system_lib
 )
 
@@ -72,16 +72,16 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(tut_ibx0020_node src/tut_ibx0020_node.cpp)
+add_executable(control src/control.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(tut_ibx0020_node tut_ibx0020_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(tut_ibx0020_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(control
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##

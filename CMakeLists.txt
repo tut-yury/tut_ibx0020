@@ -4,7 +4,12 @@ project(tut_ibx0020)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS geometry_msgs roscpp rospy)
+find_package(catkin REQUIRED COMPONENTS
+  geometry_msgs
+  nav_msgs
+  roscpp
+  rospy
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -36,7 +41,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs roscpp rospy)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs
+#   geometry_msgs#   nav_msgs
 # )
 
 ###################################
@@ -51,7 +56,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs roscpp rospy)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES tut_ibx0020
-  CATKIN_DEPENDS geometry_msgs roscpp rospy
+#  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy
 #  DEPENDS system_lib
 )
 
@@ -72,16 +77,16 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(control src/control.cpp)
+#add_executable(control_cpp src/control.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(tut_ibx0020_node tut_ibx0020_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(control
-  ${catkin_LIBRARIES}
-)
+#target_link_libraries(control_cpp
+#  ${catkin_LIBRARIES}
+#)
 
 #############
 ## Install ##

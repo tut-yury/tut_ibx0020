@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE UWSimScene SYSTEM "UWSimScene.dtd" >
+
+<UWSimScene>
+  <oceanState>
+    <windx> 1.0 </windx>
+    <windy> 1.0 </windy>
+    <windSpeed> 12 </windSpeed>
+    <depth> 10000 </depth>
+    <reflectionDamping> 0.35 </reflectionDamping>
+    <waveScale> 0 </waveScale>
+    <isNotChoppy> 1 </isNotChoppy>
+    <choppyFactor> -2.5 </choppyFactor>
+    <crestFoamHeight> 2.2 </crestFoamHeight>
+    <oceanSurfaceHeight> 0 </oceanSurfaceHeight>
+    <fog>
+      <density> 0.025 </density>
+      <color>
+	<r>0.017</r>
+	<g>0.027</g>
+	<b>0.079</b>
+      </color>
+    </fog>
+    <color>
+	<r>0.017</r>
+	<g>0.027</g>
+	<b>0.079</b>
+    </color>
+    <attenuation>
+      <r>0.015</r>
+      <g>0.0075 </g>
+      <b> 0.005 </b>
+    </attenuation>
+  </oceanState>
+
+  <simParams>
+    <disableShaders> 1 </disableShaders>
+    <resw> 400 </resw>
+    <resh> 300 </resh>
+  </simParams>
+
+  <camera>
+    <freeMotion> 1 </freeMotion>
+    <fov> 75 </fov>
+    <aspectRatio> 1.33 </aspectRatio>
+    <near> 0.01 </near>
+    <far> 10000 </far>
+    <position>
+      <x>3.4</x>
+      <y>2.4 </y>
+      <z>-0.2 </z>
+    </position> 
+    <lookAt>
+      <x>3.3</x>
+      <y>2.3 </y>
+      <z>-0.3 </z>
+    </lookAt>
+  </camera>
+
+ <vehicle>
+    <name>robot_0</name>
+    <file>robot.urdf</file>
+    <position><x> 2 </x><y> 1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f0</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l0</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r0</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d0</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u0</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+<vehicle>
+    <name>robot_1</name>
+    <file>robot.urdf</file>
+    <position><x> 1 </x><y> 1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f1</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l1</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r1</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d1</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u1</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+<vehicle>
+    <name>robot_2</name>
+    <file>robot.urdf</file>
+    <position><x> 0 </x><y> 1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f2</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l2</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r2</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d2</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u2</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+<vehicle>
+    <name>robot_3</name>
+    <file>robot.urdf</file>
+    <position><x> 0 </x><y> -1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f3</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l3</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r3</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d3</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u3</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+  <vehicle>
+    <name>robot_4</name>
+    <file>robot.urdf</file>
+    <position><x> 1 </x><y> -1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f4</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l4</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r4</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d4</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u4</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+  <vehicle>
+    <name>robot_5</name>
+    <file>robot.urdf</file>
+    <position><x> 2 </x><y> -1 </y><z> -2 </z></position>
+    <rangeSensor>
+      <name>range_f5</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.16 </x><y> 0 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_l5</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> 0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> 0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_r5</name><relativeTo>base_link</relativeTo><range>1</range><visible>1</visible>
+      <position><x> 0.08 </x><y> -0.09 </y><z> 0 </z></position>
+      <orientation><r> 0</r><p> 0 </p><y> -0.5 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_d5</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> -0.11 </z></position>
+      <orientation><r> 0</r><p> 1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+    <rangeSensor>
+      <name>range_u5</name><relativeTo>base_link</relativeTo><range>0.5</range><visible>1</visible>
+      <position><x> 0.00 </x><y> 0 </y><z> 0.11 </z></position>
+      <orientation><r> 0</r><p> -1.57 </p><y> 0 </y></orientation>
+    </rangeSensor>
+  </vehicle>
+
+ <vehicle>
+    <name>terrain</name>
+    <file>pool.urdf</file>
+    <position>
+      <x> 0</x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </position>
+    <orientation>
+      <r>0</r>
+      <p>0 </p>
+      <y>0 </y>
+    </orientation>
+  </vehicle>
+
+  <rosInterfaces>
+    <PATToROSOdom>
+      <topic> /robot_0/odom </topic>
+      <vehicleName> robot_0 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /robot_1/odom </topic>
+      <vehicleName> robot_1 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /robot_2/odom </topic>
+      <vehicleName> robot_2 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /robot_3/odom </topic>
+      <vehicleName> robot_3 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /robot_4/odom </topic>
+      <vehicleName> robot_4 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /robot_5/odom </topic>
+      <vehicleName> robot_5 </vehicleName>
+    </PATToROSOdom>
+
+    <ROSTwistToPAT>
+      <topic> /robot_0/cmd_vel_stamped </topic>
+      <vehicleName> robot_0 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /robot_1/cmd_vel_stamped </topic>
+      <vehicleName> robot_1 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /robot_2/cmd_vel_stamped </topic>
+      <vehicleName> robot_2 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /robot_3/cmd_vel_stamped </topic>
+      <vehicleName> robot_3 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /robot_4/cmd_vel_stamped </topic>
+      <vehicleName> robot_4 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /robot_5/cmd_vel_stamped </topic>
+      <vehicleName> robot_5 </vehicleName>
+    </ROSTwistToPAT>
+
+    <RangeSensorToROSRange>
+      <name>range_f0</name>
+      <topic>/robot_0/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l0</name>
+      <topic>/robot_0/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r0</name>
+      <topic>/robot_0/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u0</name>
+      <topic>/robot_0/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d0</name>
+      <topic>/robot_0/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>range_f1</name>
+      <topic>/robot_1/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l1</name>
+      <topic>/robot_1/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r1</name>
+      <topic>/robot_1/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u1</name>
+      <topic>/robot_1/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d1</name>
+      <topic>/robot_1/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>range_f2</name>
+      <topic>/robot_2/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l2</name>
+      <topic>/robot_2/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r2</name>
+      <topic>/robot_2/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u2</name>
+      <topic>/robot_2/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d2</name>
+      <topic>/robot_2/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>range_f3</name>
+      <topic>/robot_3/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l3</name>
+      <topic>/robot_3/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r3</name>
+      <topic>/robot_3/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u3</name>
+      <topic>/robot_3/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d3</name>
+      <topic>/robot_3/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>range_f4</name>
+      <topic>/robot_4/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l4</name>
+      <topic>/robot_4/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r4</name>
+      <topic>/robot_4/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u4</name>
+      <topic>/robot_4/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d4</name>
+      <topic>/robot_4/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>range_f5</name>
+      <topic>/robot_5/range_f</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_l5</name>
+      <topic>/robot_5/range_l</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_r5</name>
+      <topic>/robot_5/range_r</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_u5</name>
+      <topic>/robot_5/range_u</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+    <RangeSensorToROSRange>
+      <name>range_d5</name>
+      <topic>/robot_5/range_d</topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+  </rosInterfaces>
+</UWSimScene>
+

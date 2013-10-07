@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<robot name="pool">
+  <link name="base_link"></link>
+
+  <link name="bottom">
+    <visual>
+      <geometry>
+        <box size="8.05 6.05 .1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 0.6"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall1">
+    <visual>
+      <geometry>
+        <box size="8.05 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall2">
+    <visual>
+      <geometry>
+        <box size="8.05 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall3">
+    <visual>
+      <geometry>
+        <box size="0.1 6.05 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall4">
+    <visual>
+      <geometry>
+        <box size="0.1 6.05 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_bottom" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom"/>
+    <origin xyz="0 0 -4"/>
+  </joint>
+
+  <joint name="base_to_wall1" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall1"/>
+    <origin xyz="0 3 -2"/>
+  </joint>
+
+  <joint name="base_to_wall2" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall2"/>
+    <origin xyz="0 -3 -2"/>
+  </joint>
+
+  <joint name="base_to_wall3" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall3"/>
+    <origin xyz="4 0 -2"/>
+  </joint>
+
+  <joint name="base_to_wall4" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall4"/>
+    <origin xyz="-4 0 -2"/>
+  </joint>
+
+
+  <link name="wall1c">
+    <visual>
+      <geometry>
+        <box size="1.43 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall2c">
+    <visual>
+      <geometry>
+        <box size="1.43 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall3c">
+    <visual>
+      <geometry>
+        <box size="1.43 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall4c">
+    <visual>
+      <geometry>
+        <box size="1.43 0.1 4.05"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+
+  <joint name="base_to_wall1c" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall1c"/>
+    <origin xyz="-3.5 -2.5 -2" rpy="0 0 -.786"/>
+  </joint>
+
+  <joint name="base_to_wall2c" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall2c"/>
+    <origin xyz="-3.5 2.5 -2" rpy="0 0 .786"/>
+  </joint>
+
+
+  <joint name="base_to_wall3c" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall3c"/>
+    <origin xyz="3.5 2.5 -2" rpy="0 0 -.786"/>
+  </joint>
+
+  <joint name="base_to_wall4c" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall4c"/>
+    <origin xyz="3.5 -2.5 -2" rpy="0 0 .786"/>
+  </joint>
+
+  <link name="wall1l">
+    <visual>
+      <geometry>
+        <box size="6 0.1 2"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall2l">
+    <visual>
+      <geometry>
+        <box size="6 0.1 6"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall3l">
+    <visual>
+      <geometry>
+        <box size="6 0.1 2.4"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_wall1l" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall1l"/>
+    <origin xyz="-0.5 0 -2.5" rpy="-1 0 1.57"/>
+  </joint>
+
+  <joint name="base_to_wall2l" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall2l"/>
+    <origin xyz="-3 0 -1.5" rpy="1 0 1.57"/>
+  </joint>
+
+  <joint name="base_to_wall3l" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall3l"/>
+    <origin xyz="3.3 0 -3.3" rpy="-1 0 -1.57"/>
+  </joint>
+
+  <link name="wall1h">
+    <visual>
+      <geometry>
+        <box size="0.1 2.4 2.1"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall2h">
+    <visual>
+      <geometry>
+        <box size="0.1 2.4 2.1"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_wall1h" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall1h"/>
+    <origin xyz="-1.3 1.8 -1" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_to_wall2h" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall2h"/>
+    <origin xyz="-1.3 -1.8 -1" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall1hc">
+    <visual>
+      <geometry>
+        <box size="0.72 0.1 2.1"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <link name="wall2hc">
+    <visual>
+      <geometry>
+        <box size="0.72 0.1 2.1"/>
+      </geometry>
+      <material name="white">
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_wall1hc" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall1hc"/>
+    <origin xyz="-1.05 -2.75 -1" rpy="0 0 -.786"/>
+  </joint>
+
+  <joint name="base_to_wall2hc" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall2hc"/>
+    <origin xyz="-1.05 2.75 -1" rpy="0 0 .786"/>
+  </joint>
+
+</robot>
+

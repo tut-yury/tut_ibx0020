@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="visual">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 0.8 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="hull1">
+    <visual>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_hull1" type="fixed">
+    <parent link="base_link"/>
+    <child link="hull1"/>
+    <origin xyz="0.1 0 0"/>
+  </joint>
+
+  <link name="hull3">
+    <visual>
+      <geometry>
+        <sphere radius="0.11"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_hull3" type="fixed">
+    <parent link="base_link"/>
+    <child link="hull3"/>
+    <origin xyz="-0.04 0 0"/>
+  </joint>
+
+
+
+
+
+</robot>
+

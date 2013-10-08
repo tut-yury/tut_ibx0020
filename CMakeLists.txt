@@ -7,6 +7,7 @@ project(tut_ibx0020)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
+  sensor_msgs
   roscpp
   rospy
 )
@@ -77,14 +78,14 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-#add_executable(control_cpp src/control.cpp)
+#add_executable(swarm_cpp src/swarm.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(tut_ibx0020_node tut_ibx0020_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-#target_link_libraries(control_cpp
+#target_link_libraries(swarm_cpp
 #  ${catkin_LIBRARIES}
 #)
 

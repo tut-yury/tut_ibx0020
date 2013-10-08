@@ -8,24 +8,24 @@ import tf   #for a function to transform quaternion into euler
 import math #for sqrt and atan2 functions
 import random #for random behavior
 
-#global variables to store the last received range readings
+#global variables to store the last received range readings and odom
 lastF = None
 lastL = None
 lastR = None
 lastOdomReading = None
 
-#callback functions to process data from subscribed range topic
+#callback functions to process data from subscribed range and topics
 def rangeF_received(data):
     global lastF 
-    lastF = data.range
+    lastF = data
 
 def rangeL_received(data):
     global lastL 
-    lastL = data.range
+    lastL = data
 
 def rangeR_received(data):
     global lastR 
-    lastR = data.range
+    lastR = data
 
 def odometryReceived(data):
     global lastOdomReading 
@@ -38,7 +38,7 @@ def swarmrobot():
     global lastR
     global lastOdomReading
 
-    #subscribing to odometry and announcing published topics
+    #subscribing to odometry and ranges, announcing published topics
     rospy.Subscriber("odom", Odometry, odometryReceived)
     rospy.Subscriber("range_f", Range, rangeF_received)
     rospy.Subscriber("range_l", Range, rangeL_received)
@@ -51,7 +51,7 @@ def swarmrobot():
     
     while not rospy.is_shutdown():
         if lastF == None or lastL == None or lastR == None or lastOdomReading == None:
-            print 'waiting for ranges to become available'
+            print 'waiting for ranges and odom to become available'
             r.sleep()
             continue 
         # default speeds, 
@@ -69,9 +69,9 @@ def swarmrobot():
         #   Only Thrust(cmd.twist.linear.x), Buoyance(cmd.twist.linear.z) and Turning(cmd.twist.angular.z)
          
         #Obstacle Avoidance behavior        
-        OAforward = max(0,lastF - 0.5)
+        OAforward = max(0,lastF.range - 0.5)
         OAupdown = 0
-        OAleftright = lastL-lastR
+        OAleftright = lastL.range-lastR.range
         #Random behavior
         RNDforward = 0
         RNDupdown = 0

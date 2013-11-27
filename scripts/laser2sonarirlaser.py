@@ -16,7 +16,6 @@ class laser2sonarirlaser:
         rospy.init_node('laser2sonar')
         self.rng = Range()
         self.laserData = None
-        rospy.Subscriber("base_scan", LaserScan, self.callback_LaserScan)
         self.pub_sonar = []
         self.pub_ir = []
         for idx in range(0, self.sensor_num):
@@ -24,6 +23,7 @@ class laser2sonarirlaser:
             self.pub_ir.append(rospy.Publisher('ir_'+str(idx), Range))
         self.pub_laser = rospy.Publisher('laser', LaserScan)
         self.pub_tf = tf.TransformBroadcaster()
+        rospy.Subscriber("base_scan", LaserScan, self.callback_LaserScan)
   
     def callback_LaserScan(self, data):
         self.laserData = data

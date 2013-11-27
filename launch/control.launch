@@ -10,7 +10,11 @@
 <arg name="th" />
 
 <group> 
-    <node name="control" pkg="tut_ibx0020" type="control" output="screen">
+
+    <node name="stageros" pkg="stage_ros" type="stageros"
+    args="$(find tut_ibx0020)/worlds/test.world" />
+
+    <node name="ArbitraryNameOfControlNode" pkg="tut_ibx0020" type="control.py" output="screen">
     <!-- setting ~x, ~y and ~th params from roslaunch arguments -->
       <param name="x" value="$(arg x)" />
       <param name="y" value="$(arg y)" />
@@ -18,10 +22,7 @@
     </node>
 
     <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" 
-    args="-c -e /cmd_vel/linear/x /cmd_vel/angular/z /p/data" />
+    args="-e /cmd_vel/linear/x /cmd_vel/angular/z /p/data" />
 
-    <node name="stageros" pkg="stage_ros" type="stageros" 
-    args="$(find tut_ibx0020)/worlds/test.world" />
-    
   </group>
 </launch>

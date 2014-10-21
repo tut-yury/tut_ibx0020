@@ -19,9 +19,9 @@ class laser2sonarirlaser:
         self.pub_sonar = []
         self.pub_ir = []
         for idx in range(0, self.sensor_num):
-            self.pub_sonar.append(rospy.Publisher('sonar_'+str(idx), Range))
-            self.pub_ir.append(rospy.Publisher('ir_'+str(idx), Range))
-        self.pub_laser = rospy.Publisher('laser', LaserScan)
+            self.pub_sonar.append(rospy.Publisher('sonar_'+str(idx), Range, queue_size=self.sensor_num))
+            self.pub_ir.append(rospy.Publisher('ir_'+str(idx), Range, queue_size=self.sensor_num))
+        self.pub_laser = rospy.Publisher('laser', LaserScan, queue_size=self.sensor_num)
         self.pub_tf = tf.TransformBroadcaster()
         rospy.Subscriber("base_scan", LaserScan, self.callback_LaserScan)
   
@@ -60,20 +60,17 @@ class laser2sonarirlaser:
 
         self.pub_laser.publish(self.laserData)
 
+	total_angle = self.laserData.angle_max-self.laserData.angle_min
+	stepRad = total_angle/self.sensor_num;
+	idx = rng.header.seq % self.sensor_num
+	frame_id = 'range_'+str(idx)
+	print frame_id
+	angle = self.laserData.angle_min+stepRad*(idx+0.5)
+	self.pub_tf.sendTransform((math.cos(angle)*self.radius, math.sin(angle)*self.radius, 0.00), tf.transformations.quaternion_about_axis(angle, (0,0,1)), rospy.get_rostime(), frame_id, 'base_laser_link' )
+
               
     def run(self):
-        r = rospy.Rate(self.rate)
-        lastTfCommandSent = None
-        while not rospy.is_shutdown():
-            if self.laserData!=None and (lastTfCommandSent==None or rospy.get_rostime().to_sec()-lastTfCommandSent>1):
-                total_angle = self.laserData.angle_max-self.laserData.angle_min
-                stepRad = total_angle/self.sensor_num;
-                for idx in range(0, self.sensor_num):    
-                    frame_id = 'range_'+str(idx)
-                    angle = self.laserData.angle_min+stepRad*(idx+0.5)
-                    self.pub_tf.sendTransform((math.cos(angle)*self.radius, math.sin(angle)*self.radius, 0.00), tf.transformations.quaternion_about_axis(angle, (0,0,1)), rospy.get_rostime(), frame_id, 'base_laser_link' )
-                lastTfCommandSent = rospy.get_rostime().to_sec()
-            r.sleep()
+	rospy.spin()
 
 
 if __name__ == '__main__':

@@ -35,28 +35,28 @@ void swarmrobot(){
 
   //subscribing to odometry and ranges, announcing published topics
   ros::Subscriber sub = node.subscribe<nav_msgs::Odometry>("odom",10, odometryReceived);
-  ros::Subscriber subF = node.subscribe<sensor_msgs::Range>("range_f",10, rangeF_received);  
-  ros::Subscriber subL = node.subscribe<sensor_msgs::Range>("range_l",10, rangeL_received);  
-  ros::Subscriber subR = node.subscribe<sensor_msgs::Range>("range_r",10, rangeR_received);    
+  ros::Subscriber subF = node.subscribe<sensor_msgs::Range>("range_f",10, rangeF_received);
+  ros::Subscriber subL = node.subscribe<sensor_msgs::Range>("range_l",10, rangeL_received);
+  ros::Subscriber subR = node.subscribe<sensor_msgs::Range>("range_r",10, rangeR_received);
   ros::Publisher pub = node.advertise<geometry_msgs::TwistStamped>("cmd_vel_stamped", 1, false);
 
   ros::Rate r(10); //an object to maintain specific frequency of a control loop - 10hz
-  
+
   geometry_msgs::TwistStamped cmd; //command that will be sent to Stage (published)
-  
+
   while(ros::ok())
   {
     //required in C++ clients to receive messages from subscribed topics
     //note: Python clients don't need this call
     ros::spinOnce();
-    
+
     if (!lastOdomReading || !lastF || !lastL || !lastR ){//we cannot issue any commands until we have our position
       std::cout<<"waiting for ranges and odom to become available"<<std::endl;
       r.sleep();
       continue;
     }
 
-    // default speeds, 
+    // default speeds,
     cmd.twist.linear.x = 0; // forward
     cmd.twist.linear.z = 0; // up/down
     cmd.twist.angular.z = 0; // left/right
@@ -69,8 +69,8 @@ void swarmrobot(){
     //
     // OUTPUT:
     //   Only Thrust(cmd.twist.linear.x), Buoyance(cmd.twist.linear.z) and Turning(cmd.twist.angular.z)
-         
-    //Obstacle Avoidance behavior        
+
+    //Obstacle Avoidance behavior
     double OAforward = fmax(0,lastF->range - 0.5);
     double OAupdown = 0;
     double OAleftright = lastL->range - lastR->range;
@@ -108,9 +108,9 @@ void swarmrobot(){
 }
 
 //entry point of the executable
-int 
+int
 main(int argc, char** argv)
-{ 
+{
   ros::init(argc, argv, "swarmrobot");
   swarmrobot();
   return 0;

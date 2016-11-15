@@ -1,7 +1,7 @@
 <launch>
 <!--
-  <param name="Kp" value="0.0" type="double" />  
-  <param name="Ka" value="0.0" type="double" />  
+  <param name="Kp" value="0.0" type="double" />
+  <param name="Ka" value="0.0" type="double" />
   <param name="Kb" value="0.0" type="double" />
 -->
 <!-- command line arguments of roslaunch -->
@@ -9,7 +9,7 @@
 <arg name="y" />
 <arg name="th" />
 
-<group> 
+<group>
 
     <node name="stageros" pkg="stage_ros" type="stageros"
     args="$(find tut_ibx0020)/worlds/test.world" />
@@ -21,7 +21,7 @@
       <param name="th" value="$(arg th)" />
     </node>
 
-    <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" 
+    <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot"
     args="-e /cmd_vel/linear/x /cmd_vel/angular/z /p/data" />
 
   </group>

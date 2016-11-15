@@ -17,15 +17,15 @@
     <fog>
       <density> 0.025 </density>
       <color>
-	<r>0.017</r>
-	<g>0.027</g>
-	<b>0.079</b>
+        <r>0.017</r>
+        <g>0.027</g>
+        <b>0.079</b>
       </color>
     </fog>
     <color>
-	<r>0.017</r>
-	<g>0.027</g>
-	<b>0.079</b>
+      <r>0.017</r>
+      <g>0.027</g>
+      <b>0.079</b>
     </color>
     <attenuation>
       <r>0.015</r>
@@ -50,7 +50,7 @@
       <x>3.4</x>
       <y>2.4 </y>
       <z>-0.2 </z>
-    </position> 
+    </position>
     <lookAt>
       <x>3.3</x>
       <y>2.3 </y>
@@ -468,4 +468,3 @@
 
   </rosInterfaces>
 </UWSimScene>
-

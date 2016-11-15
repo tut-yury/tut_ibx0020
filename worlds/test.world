@@ -6,7 +6,7 @@ define block model
 
 define topurg ranger
 (
-	sensor( 			
+  sensor(
     range [ 0.0  30.0 ]
     fov 270.25
    samples 541
@@ -65,16 +65,16 @@ interval_sim 100  # simulation timestep in milliseconds
 
 
 window
-( 
-  size [ 480.000 480.000 ] 
+(
+  size [ 480.000 480.000 ]
   rotate [ 0.000 0 ]
   center [ 0 8 ]
-  scale 20 
+  scale 20
 )
 
 # load an environment bitmap
 floorplan
-( 
+(
   name "willow"
   bitmap "test.pgm"
   size [20.0 20.0 0.5]
@@ -82,10 +82,10 @@ floorplan
 )
 
 # throw in a robot
-erratic( 
+erratic(
 pose [ 0 0 0 0 ]
 name "era" color "blue")
 
-block( 
-pose [ 4 1 0 180.000 ] 
+block(
+pose [ 4 1 0 180.000 ]
 color "red")

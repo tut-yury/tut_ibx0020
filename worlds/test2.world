@@ -83,13 +83,13 @@ floorplan
 robot(
 pose [ 0 0 0 0 ]
 name "robot0"
-color "red"
+color "brown"
 )
 
 robot(
 pose [ 1 0 0 0 ]
 name "robot1"
-color "green"
+color "yellow"
 )
 
 robot(
@@ -101,7 +101,7 @@ color "blue"
 robot(
 pose [ 1 1 0 0 ]
 name "robot3"
-color "yellow"
+color "green"
 )
 
 robot(
@@ -113,7 +113,7 @@ color "orange"
 robot(
 pose [ 1 2 0 0 ]
 name "robot5"
-color "brown"
+color "red"
 )
 
 
